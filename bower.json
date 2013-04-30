@@ -1,0 +1,16 @@
+{
+  "name": "form-storage",
+  "description": "Library to store content from forms in localStorage so if browser is refreshed or back button is hit, the data is saved and restored.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jgallen23/form-storage",
+  "license": "MIT",
+  "copyright": "Greg Allen",
+  "main": "dist/form-storage.js",
+  "dependencies": {
+    "jquery": "~1.9.0",
+    "fidel": "~2.2.1"
+  },
+  "devDependencies": {
+    "assert": "*"
+  }
+}
