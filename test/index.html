@@ -12,8 +12,24 @@
 <body>
   <div id="mocha"></div>
   <div id="fixture" style="display: none">
-
+    <form id="demo-form" data-formstorage data-formstorage-id="demo-form">
+      <input name="textTest" type="text" value="test"/>
+      <select name="selectMenuTest">
+        <option>option 1</option>
+        <option selected="selected">option 2</option>
+      </select>
+      <select name="selectMultipleTest" multiple="multiple">
+        <option>option 1</option>
+        <option selected="selected">option 2</option>
+        <option selected="selected">option 3</option>
+      </select>
+      <input type="checkbox" name="checkboxTest" checked="checked" />
+      <input type="radio" name="radioTest" checked="checked" />
+      <textarea name="textareaTest">Test text</textarea>
+    </form>
   </div>
+  <script src="../components/jquery/jquery.js"></script>
+  <script src="../components/fidel/dist/fidel.js" data-cover></script>
   <script src="../dist/form-storage.js" data-cover></script>
   <script src="form-storage.test.js"></script>
   <script>

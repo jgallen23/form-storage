@@ -1,3 +1,10 @@
+/*!
+ * form-storage - Library to store content from forms in localStorage so if browser is refreshed or back button is hit, the data is saved and restored.
+ * v0.1.0
+ * https://github.com/jgallen23/form-storage
+ * copyright Greg Allen 2013
+ * MIT License
+*/
 (function($) {
   $.declare('formStorage', {
     init: function () {
