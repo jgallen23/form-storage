@@ -41,6 +41,8 @@
         <label for="textareaTest">Textarea</label><br>
         <textarea name="textareaTest"></textarea>
       </p>
+
+      <button class="clearButton">Clear</button>
     </form>
 
     <script src="../components/jquery/jquery.js"></script>
@@ -48,7 +50,14 @@
     <script src="../dist/form-storage.js" data-cover></script>
 
     <script>
-      $('#example-form').formStorage();
+      var form = $('#example-form');
+
+      form.formStorage();
+
+      $('.clearButton').click(function(){
+        form.formStorage('clear');
+        return false;
+      });
     </script>
   </body>
 </html>

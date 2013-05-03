@@ -70,4 +70,16 @@ suite('form-storage', function() {
       demoForm.find('input').first().val('new value').trigger('change');
     });
   });
+
+  suite('clear data', function() {
+    test('clear', function() {
+      localStorage.setItem('demo-form', JSON.stringify(fixtureData));
+
+      demoForm.formStorage();
+
+      demoForm.formStorage('clear');
+
+      assert.equal(typeof localStorage['demo-form'], 'undefined');
+    });
+  });
 });

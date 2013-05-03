@@ -65,6 +65,14 @@
       }
 
       this.el.trigger('formStorageRestore');
+    },
+
+    clear: function () {
+      if(window.localStorage[this.id]) {
+        delete window.localStorage[this.id];
+      }
+
+      this.el.trigger('formStorageClear');
     }
   });
 })(jQuery);
