@@ -17,6 +17,8 @@
       this.restore();
 
       this.el.on('blur change', 'input, textarea, select', this.proxy(this.save));
+
+      this.el.trigger('formStorageInit');
     },
 
     supportsLocalstorage: function () {
@@ -61,6 +63,8 @@
         field = newObject[i];
         this.el.find('[name="' + i + '"]').val(field);
       }
+
+      this.el.trigger('formStorageRestore');
     }
   });
 })(jQuery);

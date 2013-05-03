@@ -6,6 +6,49 @@
   </head>
   <body>
 
-    <script src="../dist/form-storage.js"></script>
+    <form id="example-form" data-formstorage data-formstorage-id="example-form">
+      <p>
+        <label for="textTest"> Example input[type=text]</label><br>
+        <input name="textTest" type="text"/>
+      </p>
+      <p>
+        <label for="selectMenuTest">Select dropdown</label><br>
+        <select name="selectMenuTest">
+          <option>option 1</option>
+          <option>option 2</option>
+        </select>
+      </p>
+      <p>
+        <label for="selectMultipleTest">Multiple select</label><br>
+        <select name="selectMultipleTest" multiple="multiple">
+          <option>option 1</option>
+          <option>option 2</option>
+          <option>option 3</option>
+        </select>
+      </p>
+      <p>
+        <label for="checkboxTest">Checkbox</label><br>
+        <input type="checkbox" name="checkboxTest" />
+        <input type="checkbox" name="checkboxTest2" />
+        <input type="checkbox" name="checkboxTest3" />
+      </p>
+      <p>
+        Radio<br>
+        <input type="radio" name="radioTest" value="Male" /> Male<br>
+        <input type="radio" name="radioTest" value="Female" /> Female
+      </p>
+      <p>
+        <label for="textareaTest">Textarea</label><br>
+        <textarea name="textareaTest"></textarea>
+      </p>
+    </form>
+
+    <script src="../components/jquery/jquery.js"></script>
+    <script src="../components/fidel/dist/fidel.js" data-cover></script>
+    <script src="../dist/form-storage.js" data-cover></script>
+
+    <script>
+      $('#example-form').formStorage();
+    </script>
   </body>
 </html>
