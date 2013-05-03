@@ -34,6 +34,8 @@
     },
 
     save: function () {
+      if(!this.supportsLocalstorage()) return false;
+
       this.data = this.el.serializeArray();
 
       window.localStorage[this.id] = JSON.stringify(this.data);
@@ -42,6 +44,8 @@
     },
 
     restore: function () {
+      if(!this.supportsLocalstorage()) return false;
+      
       if(!this.data.length) return;
 
       var i, field, c = this.data.length;
@@ -68,6 +72,8 @@
     },
 
     clear: function () {
+      if(!this.supportsLocalstorage()) return false;
+
       if(window.localStorage[this.id]) {
         delete window.localStorage[this.id];
       }
