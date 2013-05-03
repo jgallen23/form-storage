@@ -1,9 +1,11 @@
 suite('form-storage', function() {
-  var demoForm = $('#demo-form');
-  var fixtureData = demoForm.serializeArray();
+  var demoForm, fixtureData;
 
   setup(function() {
+    demoForm = $('#demo-form').clone();
+    fixtureData = demoForm.serializeArray();
     localStorage.removeItem('demo-form');
+    demoForm.removeData();
   });
 
   suite('init', function() {
@@ -19,6 +21,18 @@ suite('form-storage', function() {
       demoForm.formStorage();
 
       assert.equal(JSON.stringify(demoForm.formStorage('getData')), JSON.stringify(fixtureData));
+    });
+  });
+
+  suite('load saved', function() {
+    test('input[type=text] data', function (){
+      localStorage.setItem('demo-form', JSON.stringify(fixtureData));
+
+      demoForm.find('input[type="text"]').val('this should be replaced');
+
+      demoForm.formStorage();
+
+      assert.equal(JSON.stringify(fixtureData), JSON.stringify(demoForm.serializeArray()));
     });
   });
 
